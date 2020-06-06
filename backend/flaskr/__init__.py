@@ -211,20 +211,50 @@ def create_app(test_config=None):
   and shown whether they were correct or not. 
   '''
   @app.route('/quizzes',methods=['POST'])
-  def get_random_quiz_questions():
+  def get_quiz_questions():
     body=request.get_json()
-    previous_question=request.get_json('previous_questions')
-    quiz_category=request.get_json('quiz_category')
+    previous_question=body['previous_questions']
+    category=body['quiz_category']['id']
 
-    if (quiz_category is None) or (previous_question is None):
+    if (category is None) or (previous_question is None):
       abort (400)
 
     #for ALL categories
-    if (quiz_category['id']==0):
+    if category==0:
       questions=Question.query.all()
     else:
-      questions=Question.query.filter_by(category=category['id']).all()
+      questions=Question.query.filter_by(category=category).all()
+    #getting the toal number of questions
     total=len(questions)
+
+    #getting random questions
+    def randomize_question():
+      return questions[random.randrange(0,len(questions),1)]
+
+    #checks if the question was used
+    def check_if_used(question):
+      used=False
+      for previous in previous_question:
+        if (previous==question.id):
+          used=True
+      return used
+
+    #Get random question
+    question=randomize_question()
+
+    while(check_if_used(question)):
+      question=randomize_question()
+      if (len(previous_question)== total):
+        return jsonify ({
+          'success':True
+        })
+    
+    return jsonify({
+      'success':True,
+      'question':question.format()
+    })
+
+
   '''
   @TODO: 
   Create error handlers for all expected errors 
