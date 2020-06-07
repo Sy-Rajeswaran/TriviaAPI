@@ -112,89 +112,88 @@ The API will return three types of errors:
 * Sample: `curl http://127.0.0.1:5000/questions`<br>
 
         {
-            "categories": {
-                "1": "Science", 
-                "2": "Art", 
-                "3": "Geography", 
-                "4": "History", 
-                "5": "Entertainment", 
-                "6": "Sports"
-            }, 
-            "questions": [
-                {
-                    "answer": "Colorado, New Mexico, Arizona, Utah", 
-                    "category": 3, 
-                    "difficulty": 3, 
-                    "id": 164, 
-                    "question": "Which four states make up the 4 Corners region of the US?"
-                }, 
-                {
-                    "answer": "Muhammad Ali", 
-                    "category": 4, 
-                    "difficulty": 1, 
-                    "id": 9, 
-                    "question": "What boxer's original name is Cassius Clay?"
-                }, 
-                {
-                    "answer": "Apollo 13", 
-                    "category": 5, 
-                    "difficulty": 4, 
-                    "id": 2, 
-                    "question": "What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"
-                }, 
-                {
-                    "answer": "Tom Cruise", 
-                    "category": 5, 
-                    "difficulty": 4, 
-                    "id": 4, 
-                    "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
-                }, 
-                {
-                    "answer": "Edward Scissorhands", 
-                    "category": 5, 
-                    "difficulty": 3, 
-                    "id": 6, 
-                    "question": "What was the title of the 1990 fantasy directed by Tim Burton about a young man with multi-bladed appendages?"
-                }, 
-                {
-                    "answer": "Brazil", 
-                    "category": 6, 
-                    "difficulty": 3, 
-                    "id": 10, 
-                    "question": "Which is the only team to play in every soccer World Cup tournament?"
-                }, 
-                {
-                    "answer": "Uruguay", 
-                    "category": 6, 
-                    "difficulty": 4, 
-                    "id": 11, 
-                    "question": "Which country won the first ever soccer World Cup in 1930?"
-                }, 
-                {
-                    "answer": "George Washington Carver", 
-                    "category": 4, 
-                    "difficulty": 2, 
-                    "id": 12, 
-                    "question": "Who invented Peanut Butter?"
-                }, 
-                {
-                    "answer": "Lake Victoria", 
-                    "category": 3, 
-                    "difficulty": 2, 
-                    "id": 13, 
-                    "question": "What is the largest lake in Africa?"
-                }, 
-                {
-                    "answer": "The Palace of Versailles", 
-                    "category": 3, 
-                    "difficulty": 3, 
-                    "id": 14, 
-                    "question": "In which royal palace would you find the Hall of Mirrors?"
-                }
-            ], 
-            "success": true, 
-            "total_questions": 19
-        }
+  "categories": {
+    "1": "Sports", 
+    "2": "History", 
+    "3": "Geography", 
+    "4": "Science", 
+    "5": "Art"
+  }, 
+  "questions": [
+    {
+       "answer": "6", 
+      "category": "Sports", 
+      "difficulty": 2, 
+      "id": 1, 
+      "question": "How many championship rings did Michael Jordan win?"
+    }, 
+    {
+      "answer": "Calcium", 
+      "category": "Science", 
+      "difficulty": 1, 
+      "id": 3, 
+      "question": "What element on the period table has an atomic symbol of Ca?"
+    }, 
+    {
+      "answer": "Ontario", 
+      "category": "Geography", 
+      "difficulty": 1, 
+      "id": 2, 
+      "question": "What province in Canada is Toronto located in?"
+    }, 
+    {
+      "answer": "44", 
+      "category": "History", 
+      "difficulty": 3, 
+      "id": 4, 
+      "question": "What number president was Barack Obama?"
+    }, 
+    {
+      "answer": "Hispania", 
+      "category": "History", 
+      "difficulty": 4, 
+      "id": 5, 
+      "question": " During the Roman Empire part, what was the name of Spain?"
+    }, 
+    {
+      "answer": "Muhammad Ali", 
+      "category": "Sports", 
+      "difficulty": 4, 
+      "id": 6, 
+      "question": " Despite suffering from Parkinson, what athlete lighted the Olympic flame to inaugurate the Olympic Games in Atlanta?"
+    }, 
+    {
+      "answer": "Swimming", 
+      "category": "Sports", 
+      "difficulty": 2, 
+      "id": 7, 
+      "question": "Dolphin style is related to what sport?"
+    }, 
+    {
+      "answer": "2", 
+      "category": "Sports", 
+      "difficulty": 1, 
+      "id": 8, 
+      "question": "How many players are in a chess game?"
+    }, 
+    {
+      "answer": "World Wrestling Entertainment", 
+      "category": "Sports", 
+      "difficulty": 2, 
+      "id": 10, 
+      "question": "What does WWE stand for?"
+    }, 
+    {
+      "answer": "Eldrick Woods", 
+      "category": "Sports", 
+      "difficulty": 3, 
+      "id": 12, 
+      "question": "What is Tiger Woods real name?"
+    }
+  ], 
+  "success": true, 
+  "total_questions": 15
+}
 
 #### DELETE /questions/\<int:id\>
 
